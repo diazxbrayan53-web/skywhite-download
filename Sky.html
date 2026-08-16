@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 30px;
+            background: #1e1e1e;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: #00ff88;
+        }
+
+        #contador {
+            font-size: 40px;
+            margin: 25px;
+        }
+
+        #download {
+            display: none;
+            background: #00c853;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #download:hover {
+            background: #00a844;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Seu download está quase pronto!</h1>
+
+    <p>Aguarde a contagem para liberar o download.</p>
+
+    <div id="contador">10</div>
+
+    <a id="download"
+       href="https://www.mediafire.com/file/upavizusy3l4l85/Proxy_Killua_gr%25C3%25A1tis_V17_atualizado_todos_os_servidores_para_o_FF_normal_%25F0%259F%2595%25B9%25EF%25B8%258F.zip/file"
+       target="_blank">
+       📥 DOWNLOAD
+    </a>
+</div>
+
+<script>
+    let tempo = 10;
+    const contador = document.getElementById("contador");
+    const botao = document.getElementById("download");
+
+    const intervalo = setInterval(() => {
+        tempo--;
+        contador.textContent = tempo;
+
+        if (tempo <= 0) {
+            clearInterval(intervalo);
+            contador.style.display = "none";
+            botao.style.display = "inline-block";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
